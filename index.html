@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <meta name="generator" content="Hugo 0.104.2" />
+    <title>Application</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.2/examples/checkout/"
+    />
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet" />
+  </head>
+  <body class="bg-light">
+    <div class="container align-items-center">
+      <main>
+        <div class="py-5 text-center">
+          <img
+            class="d-block mx-auto mb-4"
+            src="bank.png"
+            alt=""
+            width="72"
+            height="57"
+          />
+          <h2>Loan Application Form</h2>
+        </div>
+
+        <div class="row g-5">
+          <div class="col-md-10 col-lg-10">
+            <h4 class="mb-4">Contact information</h4>
+            <form
+              class="needs-validation"
+              action="final.html"
+              method="post"
+              novalidate
+            >
+              <div class="row g-3">
+                <div class="col-md-2">
+                  <label for="state" class="form-label">Title </label>
+                  <select class="form-select" id="state" required>
+                    <option value="">Select</option>
+                    <option>Mr</option>
+                    <option>Mrs</option>
+                    <option>Ms</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a valid title.
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <label for="firstName" class="form-label">First name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder=""
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid first name is required.
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <label for="lastName" class="form-label">Last name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder=""
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+
+                <div class="col-md-7">
+                  <label for="username" class="form-label">Username</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">@</span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="username"
+                      placeholder="Username"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Your username is required.
+                    </div>
+                  </div>
+                </div>
+                <!-- BIRTHDAY -->
+                <div class="col-md-6">
+                  <label for="birthday" class="form-label">Birthday:</label>
+                  <div class="input-group has-validation">
+                    <input
+                      type="date"
+                      id="birthday"
+                      name="birthday"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-7">
+                  <label for="email" class="form-label"
+                    >Email <span class="text-muted">(Optional)</span></label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="you@example.com"
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid email address for shipping updates.
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-2">
+                  <label for="number" class="form-label"
+                    >Phone <span class="text-muted"></span
+                  ></label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="number"
+                    placeholder="+91"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid email address for shipping updates.
+                  </div>
+                </div>
+
+                <!-- MARRITAL STATUS -->
+
+                <label for="flexRadioDefault"> Marrital status</label>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault1"
+                    required
+                  />
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Single
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault2"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Married
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault2"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Other
+                  </label>
+                </div>
+                <hr class="my-4" />
+
+                <div class="col-12">
+                  <label for="address" class="form-label">Address</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="address"
+                    placeholder="1234 Main St"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please enter your shipping address.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="address2" class="form-label"
+                    >Address 2 <span class="text-muted">(Optional)</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="address2"
+                    placeholder="Apartment or suite"
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label for="state" class="form-label">State</label>
+                  <select class="form-select" id="state" required>
+                    <option value="">Choose...</option>
+                    <option>Andhra Pradesh</option>
+                    <option>Arunachal Pradesh</option>
+                    <option>Bihar</option>
+                    <option>Goa</option>
+                    <option>Haryana</option>
+                    <option>Karnataka</option>
+                    <option>Madhya Pradesh</option>
+                    <option>Odisha</option>
+                    <option>Punjab</option>
+                  </select>
+
+                  <div class="invalid-feedback">
+                    Please provide a valid state.
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <label for="zip" class="form-label">Zip</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="zip"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">Zip code required.</div>
+                </div>
+              </div>
+              <hr class="my-4" />
+              <!--Employment info  -->
+              <h4 class="mb-3">Employment information</h4>
+              <div class="col-md-6 mb-3">
+                <label for="firstName" class="form-label"
+                  >Present Employer name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder=""
+                  value=""
+                  required
+                />
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="firstName" class="form-label">Occupation</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder=""
+                  value=""
+                  required
+                />
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <label for="flexRadioDefault" class="pb-2">
+                Experience<span class="text-muted">(Optional)</span></label
+              >
+              <div class="form-check col-md-7 pb-1">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault1"
+                />
+                <label class="form-check-label" for="flexRadioDefault1">
+                  0-1 Year
+                </label>
+              </div>
+              <div class="form-check pb-1">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault2"
+                />
+                <label class="form-check-label" for="flexRadioDefault2">
+                  1-2 Years
+                </label>
+              </div>
+              <div class="form-check pb-1">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault2"
+                />
+                <label class="form-check-label" for="flexRadioDefault2">
+                  3-4 Years
+                </label>
+              </div>
+              <div class="form-check pb-1">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault2"
+                />
+                <label class="form-check-label" for="flexRadioDefault2">
+                  5+ Years
+                </label>
+              </div>
+
+              <div class="col-md-6 mb-4">
+                <label for="gmi" class="form-label pt-4"
+                  >Gross monthly income</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="gmi"
+                  placeholder="ex: 20000"
+                  value=""
+                  min="0"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="mr" class="form-label">Montly rent/Mortage</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="mr"
+                  placeholder="ex : 5000"
+                  value=""
+                  min="0"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="dpa" class="form-label">Down payment amount</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="dpa"
+                  placeholder="ex : 2000"
+                  value=""
+                  min="0"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="rl" class="form-label">Required loan</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="rl"
+                  placeholder="ex : 300000"
+                  value=""
+                  min="100000"
+                  max="300000"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="rl" class="form-label">CIBL(Credit score)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="rl"
+                  placeholder="ex : 600"
+                  value=""
+                  min="10"
+                  max="1000"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2020–2024 Bank private limited</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="check.js"></script>
+    <script src="form-validation.js"></script>
+  </body>
+</html>
